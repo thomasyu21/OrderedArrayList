@@ -26,5 +26,9 @@ public class Tester{
     nums2.add(3, 14.0);
     nums2.add(2, 30.0);
     System.out.println(nums2);
+    nums2.set(0, 16.0);
+    nums2.set(4, 21.0);
+    nums2.set(1, 14.5);
+    System.out.println(nums2);
   }
 }

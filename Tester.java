@@ -30,5 +30,7 @@ public class Tester{
     nums2.set(4, 21.0);
     nums2.set(1, 14.5);
     System.out.println(nums2);
+    OrderedArrayList<Double> nums3 = new OrderedArrayList<Double>(10);
+    System.out.println(nums3);
   }
 }

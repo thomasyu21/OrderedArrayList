@@ -9,5 +9,11 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
   }
 
-  
+  public void add(int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException("Cannot take value null");
+    }else{
+      super.add(index, value);
+    }
+  }
 }

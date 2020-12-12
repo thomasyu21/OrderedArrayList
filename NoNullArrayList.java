@@ -1,11 +1,14 @@
 import java.util.*;
 public class NoNullArrayList<T> extends ArrayList<T>{
+  public NoNullArrayList(){
+    super();
+  }
+  
   public boolean add(T value){
     if (value == null){
       throw new IllegalArgumentException("Cannot take value null");
     }else{
-      super.add(value);
-      return true;
+      return super.add(value);
     }
   }
 
@@ -14,6 +17,14 @@ public class NoNullArrayList<T> extends ArrayList<T>{
       throw new IllegalArgumentException("Cannot take value null");
     }else{
       super.add(index, value);
+    }
+  }
+
+  public T set(int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException("Cannot take value null");
+    }else{
+      return super.set(index, value);
     }
   }
 }

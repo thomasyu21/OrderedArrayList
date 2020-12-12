@@ -12,4 +12,7 @@ public class Tester{
     //System.out.println(str.set(0, null));
     System.out.println(str.set(1, "test5"));
     System.out.println(str);
+    NoNullArrayList<String> str2 = new NoNullArrayList<String>(5);
+    System.out.println(str2);
   }
+}

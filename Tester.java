@@ -14,5 +14,17 @@ public class Tester{
     System.out.println(str);
     NoNullArrayList<String> str2 = new NoNullArrayList<String>(5);
     System.out.println(str2);
+    System.out.println();
+
+    OrderedArrayList<Double> nums2 = new OrderedArrayList<Double>();
+    nums2.add(10.0);
+    nums2.add(5.0);
+    nums2.add(15.0);
+    nums2.add(14.0);
+    nums2.add(1, 20.0);
+    nums2.add(4, 10.0);
+    nums2.add(3, 14.0);
+    nums2.add(2, 30.0);
+    System.out.println(nums2);
   }
 }

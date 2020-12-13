@@ -9,41 +9,47 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add(T value){
+    if (value == null){
+      throw new IllegalArgumentException("Cannot take value null");
+    }
     int index = 0;
     for (int i = 0; i < this.size(); i++){
-      if (value.compareTo(this.get(i)) >= 0){
-        index = i;
+      if (value.compareTo(this.get(i)) > 0){
+        index = i+1;
       }
     }
-    if (index == 0){
-      super.add(0, value);
+    if (index != 0){
+      super.add(index, value);
     }else{
-    super.add(index+1, value);
+      super.add(0, value);
     }
     return true;
   }
 
   public void add(int index, T value){
+    if (value == null){
+      throw new IllegalArgumentException("Cannot take value null");
+    }
     int index2 = 0;
     for (int i = 0; i < this.size(); i++){
-      if (value.compareTo(this.get(i)) >= 0){
-        index2 = i;
+      if (value.compareTo(this.get(i)) > 0){
+        index2 = i+1;
       }
     }
-    if (index2 == 0){
-      super.add(0, value);
+    if (index2 != 0){
+      super.add(index2, value);
     }else{
-    super.add(index2+1, value);
+      super.add(0, value);
     }
   }
 
   public T set(int index, T value){
-    int index2 = 0;
-    for (int i = 0; i < this.size(); i++){
-      if (value.compareTo(this.get(i)) >= 0){
-        index2 = i;
-      }
+    if (value == null){
+      throw new IllegalArgumentException("Cannot take value null");
     }
-    return super.set(index2, value);
+    T element = this.get(index);
+    this.remove(index);
+    this.add(value);
+    return element;
   }
 }
